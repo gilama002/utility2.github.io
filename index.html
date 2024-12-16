@@ -1,59 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monitoring Power Meter</title>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 50px;
-    }
-    h1 {
-      color: #333;
-    }
-    #data {
-      margin-top: 20px;
-      font-size: 1.5em;
-    }
-  </style>
-</head>
+<html>
 <body>
-  <h1>Monitoring Power Meter</h1>
-  <div id="data">
-    <p>Tegangan: <span id="voltage">-</span> V</p>
-    <p>Arus: <span id="current">-</span> A</p>
-    <p>Daya: <span id="power">-</span> W</p>
-  </div>
 
-  <script>
-    // Konfigurasi Firebase
-    const firebaseConfig = {
-      apiKey: "API_KEY_ANDA",
-      authDomain: "PROYEK.firebaseapp.com",
-      databaseURL: "https://PROYEK.firebaseio.com",
-      projectId: "PROYEK",
-      storageBucket: "PROYEK.appspot.com",
-      messagingSenderId: "SENDER_ID",
-      appId: "APP_ID"
-    };
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
 
-    // Inisialisasi Firebase
-    firebase.initializeApp(firebaseConfig);
-
-    // Referensi ke database
-    const dbRef = firebase.database().ref('data');
-
-    // Mendengarkan perubahan data
-    dbRef.on('value', (snapshot) => {
-      const data = snapshot.val();
-      document.getElementById('voltage').innerText = data.voltage || '-';
-      document.getElementById('current').innerText = data.current || '-';
-      document.getElementById('power').innerText = data.power || '-';
-    });
-  </script>
 </body>
 </html>
